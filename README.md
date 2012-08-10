@@ -13,3 +13,4 @@ The view contains:
 Technologies used: 
 (a) joomla framework - v 1.5
 (b) mootools 1.12 
+aa
