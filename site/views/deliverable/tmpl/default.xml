@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout title="DEFAULT DELIVERABLE SUBMITION LAYOUT">
+		<message>
+			<![CDATA[DEFAULT DELIVERABLE SUBMITION LAYOUT DESC]]>
+		</message>
+	</layout>
+	<state>
+		<name>DEFAULT DELIVERABLE SUBMITION LAYOUT</name>
+		<description>DEFAULT DELIVERABLE SUBMITION LAYOUT DESC</description>
+		<url>
+			<param name="task" type="hidden" value="display" default="display"/>
+		</url>
+	</state>
+</metadata>

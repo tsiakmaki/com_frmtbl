@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install type="component" version="1.5.0">
+	<name>Form Table</name>
+	<creationDate>09-08-2012</creationDate>
+	<author>Maria Tsiakmaki</author>
+	<authorEmail>m.tsiakmaki [at] gmail [dot] com</authorEmail>
+	<authorUrl></authorUrl>
+	<license>http://www.gnu.org/copyleft/gpl.html GNU/GPL</license>
+	<version>0.1</version>
+	<description>A simple form that updates the corresponding table that 
+		lists all the submitted objects. 
+		The object in our example is a list of 'deliverables', and contains 
+		stings, dates, list of options and currency types. 
+		The submit button sends an ajax request, and updates 
+		the table of deliverables. 
+		The user can also edit / delete the submitted deliverables.
+	</description>
+
+	<!-- the message display after install -->
+	<installfile>install.frmtbl.php</installfile>
+	<!-- the message display after uninstall -->
+	<uninstallfile>uninstall.frmtbl.php</uninstallfile>
+	
+	<!-- Site Main File Copy Section -->
+	<files folder="site">
+		<filename>frmtbl.php</filename>
+		<filename>index.html</filename>
+		<folder>models</folder>
+		<folder>views</folder>
+		<folder>helpers</folder>
+		<folder>controllers</folder>
+		<folder>assets</folder>
+	</files>
+	
+	<languages folder="site/language">
+		<language tag="en-GB">en-GB/en-GB.com_frmtbl.ini</language>
+   	</languages>
+  
+	<install>
+		<sql>
+			<file charset="utf8" driver="mysql">install.mysql.sql</file>
+		</sql>
+	</install>
+	
+	<uninstall>
+		<sql>
+			<file charset="utf8" driver="mysql">uninstall.mysql.sql</file>
+		</sql>
+	</uninstall>	
+
+	<administration>
+		<!-- Administration Menu Section -->
+		<menu>Form Table</menu>
+
+		<files folder="admin">
+			<filename>install.mysql.sql</filename>
+			<filename>uninstall.mysql.sql</filename>
+			<folder>tables</folder>
+		</files>		
+		<!-- languages folder="admin">
+			<language tag="en-GB">language/en-GB/en-GB.com_frmtbl.ini</language>
+		</languages-->
+	</administration>
+	
+</install>

@@ -1,0 +1,137 @@
+@CHARSET "UTF-8";
+
+/* autocomplete */
+
+div.autocompleter-loading {
+	float: left;
+	clear: right;
+	background: #fff url(images/spinner.gif) no-repeat center;
+	width: 20px;
+	height: 16px;
+}
+
+ul.autocompleter-choices {
+	position: absolute;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	border: 1px solid #eee;
+	background-color: white;
+	border-right-color: #ddd;
+	border-bottom-color: #ddd;
+	text-align: left;
+	font-family: Arial,​Verdana,​Tahoma,​Helvetica,​sans-serif;
+	z-index: 50;
+	list-style-image: none;
+	width: 500px;
+	height:150px;
+	overflow: auto;
+}
+
+ul.autocompleter-choices li {
+	list-style-image: none;
+	position: relative;
+	cursor: pointer;
+	font-weight:			normal;
+	font-size:				0.8em;
+}
+
+ul.autocompleter-choices li.autocompleter-selected {
+	list-style-image: none;
+	background-color: #ECF0F3;
+	color: #666666;
+}
+
+ul.autocompleter-choices span.autocompleter-queried {
+	/*font-weight:			bold;*/
+	list-style-image: none;
+}
+
+ul.autocompleter-choices li.autocompleter-selected span.autocompleter-queried
+	{
+	list-style-image: none;
+	color: #666666;
+}
+
+
+.myhidden {
+	display : none;
+}
+
+
+
+/* Tooltips */
+.tool-tip {
+   float: left;
+   background: #ffc;
+   border: 1px solid #D4D5AA;
+   padding: 5px;
+   max-width: 200px;
+}
+ 
+.tool-title {
+   padding: 0;
+   margin: 0;
+   font-size: 100%;
+   font-weight: bold;
+   margin-top: -15px;
+   padding-top: 15px;
+   padding-bottom: 5px;
+   background: url(../images/selector-arrow.png) no-repeat;
+}
+ 
+.tool-text {
+   font-size: 100%;
+   margin: 0;
+}
+
+
+	
+/* form */
+.formdiv {
+	padding: 0.5em;
+	margin-top: 10px;
+	margin-bottom: 2px;
+}
+ 
+.formdiv div {
+	height: 25px;
+	padding: 1em, 0.5em, 0.2em 0.5em;
+}
+ 
+.formdiv div.hr {
+	border-bottom: 2px solid #e2e2e1;
+	height: 0px;
+	margin-top: 7pt;
+	margin-bottom: 7px;
+}
+ 
+.formdiv p {
+	float: left;
+	margin: 4px 0pt;
+	width: 120px;
+}
+
+.invalid {
+	color: red;
+}
+
+
+/* table */
+#deliverablestable tbody tr td[headers=deadline_date] {
+	text-align:center;
+}
+
+table tbody tr td[headers=cost] {
+	text-align:right;
+}
+
+
+td.tableheader, th.tableheader  {
+  background: #B4C1D1;
+  color: #F6F7F9;
+  font-weight: bold;
+  padding: 4px;
+  border-right: 1px solid #fff;
+}
+

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Form Component" default="build" basedir=".">
+	<property name="component" value="com_frmtbl" />
+	<property name="src-dir" value="." />
+	<property name="src-front-dir" value="${src-dir}/site" />
+	<property name="src-back-dir" value="${src-dir}/admin" />
+	<property name="test-dir" value="C:\dev\apache2.2\htdocs\joomla_dev\" />
+	<property name="test-front-dir" value="${test-dir}/components" />
+	<property name="test-back-dir" value="${test-dir}/administrator/components" />
+
+	<!-- Fileset for front-end files -->
+	<fileset dir="${src-front-dir}" id="front-end-files">
+		<include name="**" />
+		<exclude name="language" />
+	</fileset>
+
+	<!-- Fileset for back-end (administrator) files -->
+	<fileset dir="${src-back-dir}" id="back-end-files">
+		<include name="**" />
+		<exclude name="language" />
+		<exclude name="*.sql" />
+	</fileset>
+
+	<!-- Build Front End -->
+	<target name="build-front">
+		<echo message="Copying front end..." />
+		<copy todir="${test-front-dir}/${component}">
+			<fileset refid="front-end-files" />
+		</copy>
+	</target>
+
+	<!-- Build Back End -->
+	<target name="build-back">
+		<echo message="Copying back end..." />
+		<copy todir="${test-back-dir}/${component}">
+			<fileset refid="back-end-files" />
+		</copy>
+	</target>
+
+	<!-- Target build: copies all the component' s files to test joomla! dist -->
+	<target name="build" description="Copies files to test project."
+		depends="build-front, build-back">
+		<echo message="Copying component to test server..." />
+
+		<!-- copy dictionary -->
+		<copy file="${src-dir}/site/language/en-GB/en-GB.com_frmtbl.ini"
+			todir="${test-dir}/language/en-GB/" />
+	</target>
+
+	<target name="dist" description="Creates the archive for Joomla's Extention	Manager"> 
+		<echo message="Creating archive..." /> 
+		<tar destfile="../build.tar.gz" compression="gzip"> 
+			<fileset dir="${src-dir}"> 
+				 
+				<exclude name=".settings" />
+				<exclude name=".project" />
+				<exclude name="build" />
+
+				<exclude name=".buildpath" />
+			</fileset> 
+		</tar> <echo message="Files copied and compressed in build directory"/> 
+	</target>
+
+	
+</project>
